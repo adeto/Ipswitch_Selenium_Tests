@@ -18,6 +18,7 @@ namespace Ipswitch_Selenium_Tests.PageObjects
 
         public IWebElement ElementPageHeading =>
             driver.FindElement(By.CssSelector("#Content_C338_Col00 > h1"));
+
         public void Open()
         {
             driver.Navigate().GoToUrl(this.PageUrl);

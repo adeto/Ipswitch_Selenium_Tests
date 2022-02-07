@@ -27,22 +27,31 @@ namespace Ipswitch_Selenium_Tests.PageObjects
 
         public IWebElement FieldJobTitle =>
             driver.FindElement(By.CssSelector("#Textbox-3"));
+
         public IWebElement FieldCompany =>
             driver.FindElement(By.CssSelector("#Textbox-2"));
+
         public IWebElement FieldMessage =>
             driver.FindElement(By.CssSelector("#Textarea-1"));
+
         public IWebElement FieldProductInterest =>
             driver.FindElement(By.CssSelector("#Dropdown-1"));
+
         public IWebElement FieldCountry =>
             driver.FindElement(By.CssSelector("#Country-1"));
+
         public IWebElement FieldState =>
             driver.FindElement(By.CssSelector("#State-1"));
+
         public IWebElement ButtonSubmit =>
             driver.FindElement(By.XPath("//div/button"));
+
         public IWebElement MessageSuccessfullySubmitedForm =>
             driver.FindElement(By.XPath("//span[contains(@data-sf-role,'success-message')]"));
+
         public IWebElement ErrorMessage_Invalid_Email =>
             driver.FindElement(By.XPath("(//p[@data-sf-role='error-message'])[2]"));
+
         public IWebElement ErrorMessage_Invalid_PhoneNumber =>
             driver.FindElement(By.XPath("(//p[@role='alert'])[6]"));
 
