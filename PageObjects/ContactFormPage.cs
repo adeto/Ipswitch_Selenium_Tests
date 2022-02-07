@@ -1,6 +1,6 @@
-using NUnit.Framework;
+using Ipswitch_Selenium_Tests.Constants;
 using OpenQA.Selenium;
-using System;
+
 
 namespace Ipswitch_Selenium_Tests.PageObjects
 {
@@ -57,29 +57,29 @@ namespace Ipswitch_Selenium_Tests.PageObjects
 
         public void FillContactForm(string email, string phone, string country)
         {
-            FieldFirstName.SendKeys("Test");
-            FieldLastName.SendKeys("Testov");
+            FieldFirstName.SendKeys(GlobalTestConstants.firstName);
+            FieldLastName.SendKeys(GlobalTestConstants.lastName);
             FieldEmail.SendKeys(email);
             FieldPhoneNumber.SendKeys(phone);
-            FieldCompany.SendKeys("Company_1");
-            FieldJobTitle.SendKeys("Support");
-            FieldProductInterest.SendKeys("iMacros");
+            FieldCompany.SendKeys(GlobalTestConstants.company);
+            FieldJobTitle.SendKeys(GlobalTestConstants.jobTitle);
+            FieldProductInterest.SendKeys(GlobalTestConstants.productInterest);
             FieldCountry.SendKeys(country);
-            FieldMessage.SendKeys("This is a test message.");
+            FieldMessage.SendKeys(GlobalTestConstants.message);
             ButtonSubmit.Click();
         }
         public void FillContactFormWithState(string email, string phone, string country)
         {
-            FieldFirstName.SendKeys("Test");
-            FieldLastName.SendKeys("Testov");
+            FieldFirstName.SendKeys(GlobalTestConstants.firstName);
+            FieldLastName.SendKeys(GlobalTestConstants.lastName);
             FieldEmail.SendKeys(email);
             FieldPhoneNumber.SendKeys(phone);
-            FieldCompany.SendKeys("Company_1");
-            FieldJobTitle.SendKeys("Support");
-            FieldProductInterest.SendKeys("iMacros");
+            FieldCompany.SendKeys(GlobalTestConstants.company);
+            FieldJobTitle.SendKeys(GlobalTestConstants.jobTitle);
+            FieldProductInterest.SendKeys(GlobalTestConstants.productInterest);
             FieldCountry.SendKeys(country);
-            FieldState.SendKeys("Alaska");
-            FieldMessage.SendKeys("This is a test message.");
+            FieldState.SendKeys(GlobalTestConstants.state);
+            FieldMessage.SendKeys(GlobalTestConstants.message);
             ButtonSubmit.Click();
         }
     }

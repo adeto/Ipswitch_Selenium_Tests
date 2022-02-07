@@ -1,4 +1,5 @@
-﻿using Ipswitch_Selenium_Tests.PageObjects;
+﻿using Ipswitch_Selenium_Tests.Constants;
+using Ipswitch_Selenium_Tests.PageObjects;
 using NUnit.Framework;
 
 namespace Ipswitch_Selenium_Tests.Tests
@@ -28,9 +29,9 @@ namespace Ipswitch_Selenium_Tests.Tests
         {
             var page = new ContactFormPage(driver);
             page.Open();
-            string email = "testov@t.com";
-            string phone = "345-543-545";
-            string country = "Bulgaria";
+            string email = GlobalTestConstants.validEmail;
+            string phone = GlobalTestConstants.validPhoneNumber;
+            string country = GlobalTestConstants.countryWithoutState;
             page.FillContactForm(email, phone, country);
             page.MessageSuccessfullySubmitedForm.Click();
             Assert.AreEqual("Thank you for filling out this great form!", page.MessageSuccessfullySubmitedForm.Text);
@@ -41,9 +42,9 @@ namespace Ipswitch_Selenium_Tests.Tests
         {
             var page = new ContactFormPage(driver);
             page.Open();
-            string email = "testov@t.com";
-            string phone = "345-543-545";
-            string country = "USA";
+            string email = GlobalTestConstants.validEmail;
+            string phone = GlobalTestConstants.validPhoneNumber;
+            string country = GlobalTestConstants.countryWithState;
             page.FillContactFormWithState(email, phone, country);
             page.MessageSuccessfullySubmitedForm.Click();
             Assert.AreEqual("Thank you for filling out this great form!", page.MessageSuccessfullySubmitedForm.Text);
@@ -54,9 +55,9 @@ namespace Ipswitch_Selenium_Tests.Tests
         {
             var page = new ContactFormPage(driver);
             page.Open();
-            string email = "testov";
-            string phone = "345-543-545";
-            string country = "Bulgaria";
+            string email = GlobalTestConstants.invalidEmail;
+            string phone = GlobalTestConstants.validPhoneNumber;
+            string country = GlobalTestConstants.countryWithoutState;
             page.FillContactForm(email, phone, country);
             Assert.IsTrue(page.ErrorMessage_Invalid_Email.Text.Contains("Enter a Valid Business Email"));
         }
@@ -66,9 +67,9 @@ namespace Ipswitch_Selenium_Tests.Tests
         {
             var page = new ContactFormPage(driver);
             page.Open();
-            string email = "testov@t.com";
-            string phone = "test_number_876";
-            string country = "Bulgaria";
+            string email = GlobalTestConstants.validEmail;
+            string phone = GlobalTestConstants.invalidPhoneNumber;
+            string country = GlobalTestConstants.countryWithoutState;
             page.FillContactForm(email, phone, country);
             Assert.IsTrue(page.ErrorMessage_Invalid_PhoneNumber.Text.Contains("Phone Number field input is invalid"));
         }
